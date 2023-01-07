@@ -8,5 +8,7 @@ module.exports = {
     eqeqeq: 'off',
     curly: 'error',
     quotes: ['error', 'single'],
+    'strict': 1,
+    'semi': [2, 'always'],
   },
 };

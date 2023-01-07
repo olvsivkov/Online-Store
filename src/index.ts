@@ -1,5 +1,4 @@
-console.log("HI")
+console.log('HI');
 
-let num: number
-
-num = 5
+import {getListProducts} from './getBackendProducts';
+getListProducts;
