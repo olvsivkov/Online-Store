@@ -1,4 +1,9 @@
-console.log('HI');
+console.log('index');
 
 import {getListProducts} from './getBackendProducts';
-getListProducts;
+import {putInBasket} from './basket';
+
+getListProducts; // формирует список товаров в браузере
+
+putInBasket;
+

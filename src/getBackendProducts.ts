@@ -10,13 +10,14 @@ interface Argument {
 }
 
 export function getListProducts(): void {
+  console.log('getBackendProducts');
   fetch('https://dummyjson.com/products?limit=100')
     .then(response => response.json())
     .then(data => getData(data))
     .catch(err => console.error(err.message));
 
   function getData(arg: Argument): void {
-    for(let i = 35; i < 77; i ++){
+    for(let i = 0; i < 10; i ++){
       const divTitle = <HTMLDivElement>document.createElement('div');
       divTitle.classList.add('product-title');
       const divPrice = <HTMLDivElement>document.createElement('div');

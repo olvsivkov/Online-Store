@@ -10,13 +10,23 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
+/***/ "./src/basket.ts":
+/*!***********************!*\
+  !*** ./src/basket.ts ***!
+  \***********************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"putInBasket\": () => (/* binding */ putInBasket)\n/* harmony export */ });\nvar products = document.querySelector('.products');\r\nvar counter = 0;\r\nfunction putInBasket() {\r\n    console.log('BASKET');\r\n    products.addEventListener('click', function (event) {\r\n        var target = event.target;\r\n        var BTN = target.closest('button'); // тыкаем ли мы по кнопке ?\r\n        if (BTN) { // Если да, то...\r\n            target.classList.toggle('into-basket');\r\n            if (target.classList.contains('buy-now-BTN')) {\r\n                target.innerHTML = 'in basket';\r\n                counter--;\r\n            }\r\n            if (!target.classList.contains('into-basket')) {\r\n                target.innerHTML = 'Buy now';\r\n                counter++;\r\n            }\r\n        }\r\n    });\r\n    console.log(counter);\r\n}\r\nputInBasket();\r\n\n\n//# sourceURL=webpack:///./src/basket.ts?");
+
+/***/ }),
+
 /***/ "./src/getBackendProducts.ts":
 /*!***********************************!*\
   !*** ./src/getBackendProducts.ts ***!
   \***********************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"getListProducts\": () => (/* binding */ getListProducts)\n/* harmony export */ });\nvar app = document.querySelector('.products');\r\nfunction getListProducts() {\r\n    fetch('https://dummyjson.com/products?limit=100')\r\n        .then(function (response) { return response.json(); })\r\n        .then(function (data) { return getData(data); })\r\n        .catch(function (err) { return console.error(err.message); });\r\n    function getData(arg) {\r\n        for (var i = 35; i < 77; i++) {\r\n            var divTitle = document.createElement('div');\r\n            divTitle.classList.add('product-title');\r\n            var divPrice = document.createElement('div');\r\n            divPrice.classList.add('product-price');\r\n            var productWrapper = document.createElement('div');\r\n            productWrapper.classList.add('product-wrapper');\r\n            var img = document.createElement('img');\r\n            img.classList.add('product-img');\r\n            var putIntoBTN = document.createElement('button');\r\n            putIntoBTN.classList.add('buy-now-BTN');\r\n            divTitle.innerHTML = arg.products[i].title;\r\n            divPrice.innerHTML = \"Price $ \".concat(arg.products[i].price);\r\n            putIntoBTN.innerHTML = 'Buy now';\r\n            img.src = arg.products[i].thumbnail;\r\n            app.appendChild(productWrapper);\r\n            productWrapper.appendChild(img);\r\n            productWrapper.appendChild(divTitle);\r\n            productWrapper.appendChild(divPrice);\r\n            productWrapper.appendChild(putIntoBTN);\r\n        }\r\n    }\r\n}\r\ngetListProducts();\r\n\n\n//# sourceURL=webpack:///./src/getBackendProducts.ts?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"getListProducts\": () => (/* binding */ getListProducts)\n/* harmony export */ });\nvar app = document.querySelector('.products');\r\nfunction getListProducts() {\r\n    console.log('getBackendProducts');\r\n    fetch('https://dummyjson.com/products?limit=100')\r\n        .then(function (response) { return response.json(); })\r\n        .then(function (data) { return getData(data); })\r\n        .catch(function (err) { return console.error(err.message); });\r\n    function getData(arg) {\r\n        for (var i = 0; i < 10; i++) {\r\n            var divTitle = document.createElement('div');\r\n            divTitle.classList.add('product-title');\r\n            var divPrice = document.createElement('div');\r\n            divPrice.classList.add('product-price');\r\n            var productWrapper = document.createElement('div');\r\n            productWrapper.classList.add('product-wrapper');\r\n            var img = document.createElement('img');\r\n            img.classList.add('product-img');\r\n            var putIntoBTN = document.createElement('button');\r\n            putIntoBTN.classList.add('buy-now-BTN');\r\n            divTitle.innerHTML = arg.products[i].title;\r\n            divPrice.innerHTML = \"Price $ \".concat(arg.products[i].price);\r\n            putIntoBTN.innerHTML = 'Buy now';\r\n            img.src = arg.products[i].thumbnail;\r\n            app.appendChild(productWrapper);\r\n            productWrapper.appendChild(img);\r\n            productWrapper.appendChild(divTitle);\r\n            productWrapper.appendChild(divPrice);\r\n            productWrapper.appendChild(putIntoBTN);\r\n        }\r\n    }\r\n}\r\ngetListProducts();\r\n\n\n//# sourceURL=webpack:///./src/getBackendProducts.ts?");
 
 /***/ }),
 
@@ -26,7 +36,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
   \**********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _getBackendProducts__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./getBackendProducts */ \"./src/getBackendProducts.ts\");\nconsole.log('HI');\r\n\r\n_getBackendProducts__WEBPACK_IMPORTED_MODULE_0__.getListProducts;\r\n\n\n//# sourceURL=webpack:///./src/index.ts?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _getBackendProducts__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./getBackendProducts */ \"./src/getBackendProducts.ts\");\n/* harmony import */ var _basket__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./basket */ \"./src/basket.ts\");\nconsole.log('index');\r\n\r\n\r\n_getBackendProducts__WEBPACK_IMPORTED_MODULE_0__.getListProducts; // формирует список товаров в браузере\r\n_basket__WEBPACK_IMPORTED_MODULE_1__.putInBasket;\r\n\n\n//# sourceURL=webpack:///./src/index.ts?");
 
 /***/ })
 
