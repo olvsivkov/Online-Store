@@ -50,7 +50,7 @@ body{
   width: 100%;
   border: 1px solid black;
   display: grid;
-  grid-template-columns: 2fr 5fr;
+  grid-template-columns: 1fr 4fr;
 }
 
 .filters {
@@ -60,7 +60,7 @@ body{
 
 .product-img {
   height: 300px;
-  width: 250px;
+  width: 100%;
 }
 
 .product-wrapper {
@@ -103,7 +103,7 @@ body{
 
 .products {
   min-height: 100px;
-  max-width: 1000px;
+  /*max-width: 1000px;*/
   border: 1px solid black;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;

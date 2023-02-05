@@ -1,16 +1,23 @@
-const app = <HTMLDivElement>document.querySelector('.products');
+import {getData} from '../view/createGoodsCart';
 
-interface Argument {
-  products: [{
-    price: string;
-    title: string; 
-    images: string[];
-    thumbnail: string;
-  }];
+const url = 'https://dummyjson.com/products?limit=100';
+
+export async function getListProducts(): Promise<void> { // асинхронно запрашивает данные с сервера
+  try {
+    const res = await fetch(url);
+    const data = await res.json();
+    getData(data); // создает карточку товара на странице
+  }
+  catch(err){
+    console.log(err);
+  }
 }
+getListProducts();
 
-export function getListProducts(): void {
-  console.log('getBackendProducts');
+
+/*
+
+export function getListProducts() {
   fetch('https://dummyjson.com/products?limit=100')
     .then(response => response.json())
     .then(data => getData(data))
@@ -43,3 +50,4 @@ export function getListProducts(): void {
   }
 }
 getListProducts();
+*/

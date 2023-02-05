@@ -1,9 +1,7 @@
-console.log('index');
+import {getListProducts} from './model/getBackendProducts';
+import {putInBasket} from './controller/basket';
 
-import {getListProducts} from './getBackendProducts';
-import {putInBasket} from './basket';
-
-getListProducts; // формирует список товаров в браузере
+getListProducts; // формирует список товаров на странице браузера
 
 putInBasket;
 
