@@ -1,4 +1,4 @@
-const products = <HTMLDivElement>document.querySelector('.products');
+export const products = <HTMLDivElement>document.querySelector('.products');
 
 let counter = 0;
 export function putInBasket(): void {
@@ -20,5 +20,5 @@ export function putInBasket(): void {
   });
   console.log(counter);
 }
-putInBasket();
+
 

@@ -12,7 +12,6 @@ export async function getListProducts(): Promise<void> { // асинхронно
     console.log(err);
   }
 }
-getListProducts();
 
 
 /*

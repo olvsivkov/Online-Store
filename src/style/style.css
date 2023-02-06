@@ -80,7 +80,46 @@ body{
 }
 
 .product-price {
+  width: auto;
+}
 
+.product-price-counter {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2%;
+  width: 100%;
+  justify-items: center;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 35px; 
+}
+
+.counter-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  justify-items: center;
+}
+
+.counter-wrapper>div {
+  width: 35px;
+  height: 35px;
+  border: 1px solid gray;
+  background-color: #ece1e1;
+}
+
+.counter-minus,
+.counter-plus {
+  cursor: pointer;
+}
+
+.counter-minus:hover,
+.counter-plus:hover {
+  background-color: #b4afaf;
+}
+
+.counter-minus:active,
+.counter-plus:active {
+  background-color: #5c5a5a;
 }
 
 .buy-now-BTN {

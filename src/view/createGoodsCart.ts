@@ -38,7 +38,15 @@ export function getData(arg:Argument): void { // создает карточку
     <div class="product-wrapper">
       <img class="product-img" src=${arg.products[i].thumbnail}>
       <div class="product-title">${arg.products[i].title}</div>
-      <div class="product-price">Price $ ${arg.products[i].price}</div>
+      <div class="product-stock">${arg.products[i].stock} units</div>
+      <div class="product-price-counter">
+        <div class="product-price">Price $ ${arg.products[i].price}</div>
+        <div class="counter-wrapper">
+          <div class="counter-minus">-</div>
+          <div class="counter-value">1</div>
+          <div class="counter-plus">+</div>
+        </div>
+      </div>
       <button class="buy-now-BTN">Buy now</button>
     </div>`;
     app.insertAdjacentHTML('beforeend', productWrapper);
